@@ -8,3 +8,4 @@ int main() {
   battle_game::App app(app_settings, &game_core);
   app.Run();
 }
+
