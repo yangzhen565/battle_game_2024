@@ -146,6 +146,12 @@ void Tank::Fire() {
   }
   if (fire_count_down_) {
     fire_count_down_--;
+    if (fire_count_down == 55||fire_count_down==50) {
+      auto velocity = Rotate(glm::vec2{0.0f, 20.0f}, turret_rotation_);
+      GenerateBullet<bullet::CannonBall>(
+          position_ + Rotate({0.0f, 1.2f}, turret_rotation_), turret_rotation_,
+          GetDamageScale(), velocity);
+    }
   }
 }
 
